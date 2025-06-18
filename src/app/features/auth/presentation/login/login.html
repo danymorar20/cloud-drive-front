@@ -1,0 +1,33 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-900">
+  <form
+    (ngSubmit)="onSubmit()"
+    class="bg-gray-800 p-8 rounded shadow-md w-full max-w-sm"
+  >
+    <h2 class="text-2xl text-white mb-6 text-center">Iniciar sesión</h2>
+
+    <input
+      type="email"
+      [(ngModel)]="email"
+      name="email"
+      required
+      placeholder="Email"
+      class="block w-full mb-4 px-4 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    />
+
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      required
+      placeholder="Contraseña"
+      class="block w-full mb-4 px-4 py-2 rounded bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    />
+    <button
+      type="submit"
+      class="w-full py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+    >
+      Entrar
+    </button>
+    <div *ngIf="error" class="text-red-500 mt-2 text-center">{{ error }}</div>
+  </form>
+</div>
